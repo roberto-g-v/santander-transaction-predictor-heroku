@@ -1,19 +1,10 @@
-absl-py @ file:///tmp/build/80754af9/absl-py_1607439979954/work
-argon2-cffi @ file:///C:/ci/argon2-cffi_1596826740294/work
 astor==0.8.1
 async-generator==1.10
-attrs @ file:///tmp/build/80754af9/attrs_1604765588209/work
 backcall==0.2.0
-bleach @ file:///tmp/build/80754af9/bleach_1600439572647/work
 blinker==1.4
 brotlipy==0.7.0
-cachetools @ file:///tmp/build/80754af9/cachetools_1607706694405/work
 certifi==2020.12.5
-cffi @ file:///C:/ci/cffi_1606255201193/work
-chardet @ file:///C:/ci/chardet_1605285153095/work
 click==7.1.2
-colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
-cryptography @ file:///C:/ci/cryptography_1607637872302/work
 cycler==0.10.0
 decorator==4.4.2
 defusedxml==0.6.0
