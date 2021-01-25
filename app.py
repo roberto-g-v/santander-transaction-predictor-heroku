@@ -11,7 +11,7 @@ from tensorflow.keras.models import load_model
 
 
 #Set up data base
-conn = sql.connect('database/test_final.db', check_same_thread=False)
+conn = sql.connect('data/test_final.db', check_same_thread=False)
 
 # Create an instance of the Flask class
 app = Flask(__name__)
