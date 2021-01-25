@@ -30,7 +30,7 @@ def dashboard():
 
 @app.route("/models")
 def getmodels():
-    return render_template("Models.html")
+    return render_template("models.html")
 
 @app.route("/class/<test_id>")
 def test(test_id):
