@@ -41,7 +41,7 @@ def getmodels():
 def predict():
    
     if request.method == 'GET':
-       
+        conn = sql.connect('data/test_final.db', check_same_thread=False)
         hour = request.args['id']
         x = pd.read_sql(f'SELECT * FROM final WHERE ID_code == "test_{hour}"', conn)
         x = x.drop("index", axis=1)
@@ -69,8 +69,7 @@ def predict():
 
     return render_template("prediction.html", pred= result_dict['prediction'], 
                                             pred1 = result_dict["No transaction"], 
-                                            pred2 = result_dict['transaction'])
-
+                                            pred2 = result_dict['Transaction'])
 
 if __name__ == '__main__':
     app.run(debug=True)
