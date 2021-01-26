@@ -69,7 +69,7 @@ def predict():
 
     return render_template("prediction.html", pred= result_dict['prediction'], 
                                             pred1 = result_dict["No transaction"], 
-                                            pred2 = result_dict['Transaction'])
+                                            pred2 = result_dict['transaction'])
 
 if __name__ == '__main__':
     app.run(debug=True)
