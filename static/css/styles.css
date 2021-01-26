@@ -73,3 +73,13 @@ tbody>tr>td:first-of-type {
 .positions {
     text-align: right;
 }
+
+.navbar-brand { 
+    color: black;
+    font-weight: bolder;
+}
+
+.nav a {
+    color: black;
+    font-weight: bolder;
+}

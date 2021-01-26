@@ -69,7 +69,7 @@ def predict():
         hour = request.form["hour"]
         hour = f"test_{hour}"
 
-        response = requests.get(f"http://127.0.0.1:5000/class/{hour}")
+        response = requests.get(f"https://santander-predictor.herokuapp.com/class/{hour}")
         x = response.json()
         prediction = x[0]["prediction"]
         prob1 = x[0]["No transaction"]
