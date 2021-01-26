@@ -46,7 +46,7 @@ def predict():
         x = pd.read_sql(f'SELECT * FROM final WHERE ID_code == "test_{hour}"', conn)
         x = x.drop("index", axis=1)
         x= x.drop("ID_code", axis=1)
-        model = load_model("neuronal_network_07.h5")
+        model = load_model("neuronal_network_07.h5", compile=False)
         pred_class = model.predict_classes(x)
         probability = model.predict(x)
         no_transaction = probability[0][0]
