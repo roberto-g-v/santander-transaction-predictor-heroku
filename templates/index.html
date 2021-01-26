@@ -52,14 +52,14 @@
             <h1 class="text-dark header-font"> Which customer will make the transaction?</h1>
             <h4 class="text-dark mb-3">Choose a customer below to make a prediction:</h4>
             <div class="row"></div>
-            <form class="mt-3" action="https://santander-predictor.herokuapp.com/predict/" method="POST">
+            <form class="mt-3" action="/predict" method="GET">
 
                 <div class="form-group ml-4">
                     <div class="row mb-2">
-                        <label class="col-sm-3 control-label positions pt-3"> Customer ID_code</label>
+                        <label class="col-sm-3 control-label positions pt-3">Customer ID_code</label>
                         <div class="col-sm-6">
                             <li class="filter list-group-item">
-                                <input class="form-control" id = "hour" name = 'hour' type="text" placeholder="1 - 200,000">
+                                <input class="form-control" id = "id" name = 'id' type="text" placeholder="1 - 200,000">
                               </li>
                         </div>
                     </div>

@@ -32,50 +32,44 @@ def dashboard():
 def getmodels():
     return render_template("models.html")
 
-@app.route("/class/<test_id>")
-def test(test_id):
-    x = pd.read_sql(f'SELECT * FROM final WHERE ID_code == "{test_id}"', conn)
-    x = x.drop("index", axis=1)
-    x= x.drop("ID_code", axis=1)
-    model = load_model("models/neuronal_network_07.h5")
-    pred_class = model.predict_classes(x)
-    probability = model.predict(x)
-    no_transaction = probability[0][0]
-    transaction = probability[0][1]
-    result = []
-    pred_class = pred_class[0]
-    if pred_class == 0:
-        result_dict = {}
-        result_dict['prediction'] = 'NO Transaction'
-        result_dict['No transaction'] = str(no_transaction)
-        result_dict['transaction'] = str(transaction)
-        result.append(result_dict)
+# @app.route("/class/<test_id>")
+# def test(test_id):
+   
+#     return jsonify(result)
 
-    else:
-        result_dict = {}
-        result_dict['prediction'] = 'Transaction'
-        result_dict['No transaction'] = str(no_transaction)
-        result_dict['transaction'] = str(transaction)
-        result.append(result_dict)
-
-    return jsonify(result)
-
-@app.route('/predict', methods=["GET", "POST"])
+@app.route('/predict/', methods=["GET"])
 def predict():
+   
+    if request.method == 'GET':
+       
+        hour = request.args['id']
+        x = pd.read_sql(f'SELECT * FROM final WHERE ID_code == "test_{hour}"', conn)
+        x = x.drop("index", axis=1)
+        x= x.drop("ID_code", axis=1)
+        model = load_model("models/neuronal_network_07.h5")
+        pred_class = model.predict_classes(x)
+        probability = model.predict(x)
+        no_transaction = probability[0][0]
+        transaction = probability[0][1]
+        result = []
+        pred_class = pred_class[0]
+        if pred_class == 0:
+            result_dict = {}
+            result_dict['prediction'] = 'NO Transaction'
+            result_dict['No transaction'] = str(no_transaction)
+            result_dict['transaction'] = str(transaction)
+            result.append(result_dict)
 
-    if request.method == "POST": 
+        else:
+            result_dict = {}
+            result_dict['prediction'] = 'Transaction'
+            result_dict['No transaction'] = str(no_transaction)
+            result_dict['transaction'] = str(transaction)
+            result.append(result_dict)
 
-        # getting user input from HTML form
-        hour = request.form["hour"]
-        hour = f"test_{hour}"
-
-        response = requests.get(f"https://santander-predictor.herokuapp.com/class/{hour}")
-        x = response.json()
-        prediction = x[0]["prediction"]
-        prob1 = x[0]["No transaction"]
-        prob2 = x[0]["transaction"]
-
-    return render_template("prediction.html", pred = prediction, pred1 = prob1, pred2 = prob2)
+    return render_template("prediction.html", pred= result_dict['prediction'], 
+                                            pred1 = result_dict["No transaction"], 
+                                            pred2 = result_dict['transaction'])
 
 
 if __name__ == '__main__':
