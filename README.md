@@ -1,6 +1,10 @@
-# Final Project Santander
+# Predictive NL Machine Learning - Santander
 
-## Santander Analytics
+- [link: ***Deployment of webpage and app***](<https://santander-predictor.herokuapp.com/>)
+
+![Santader.png](css/images/Santader.png)
+
+## Background
 Our mission is to help Banco Santander identify the customers that will make a transaction and understand their financial health in order to solve the most common challenge on binary classification problems such as: is a customer satisfied? Will a customer buy this product? Can a customer pay this loan? We will try to surpass the current results comparig different models precision and accuracy. With this knowledge Santander will know which products and services might help them achieve their monetary goals.
 
 ## Dataset
@@ -32,7 +36,7 @@ Dataset
 
 - 200 variables
 
-###Dataset is un balance
+## Dataset testing results
 - 89.95% corresponds to target "0" and 10.04% corresponds to target "1".
 - We decided to down sampling target "0" data to better train our model, leaving the dataset as follow: 33.33% for target "0" and 66.66% for target "1".
 
