@@ -2,7 +2,7 @@
 
 - [link: ***Deployment of webpage and app***](<https://santander-predictor.herokuapp.com/>)
 
-![Santander.png](static/images/Santander.png)
+![Santader.png](static/images/Santader.png)
 
 ## Background
 Our mission is to help Banco Santander identify the customers that will make a transaction and understand their financial health in order to solve the most common challenge on binary classification problems such as: is a customer satisfied? Will a customer buy this product? Can a customer pay this loan? We will try to surpass the current results comparig different models precision and accuracy. With this knowledge Santander will know which products and services might help them achieve their monetary goals.
