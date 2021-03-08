@@ -18,8 +18,9 @@ https://www.kaggle.com/c/santander-customer-transaction-prediction
 We will solve a binary classification problem:
 INPUT: Will the customer will make a transaction?
 OUTPUT: Yes/No
-This binary problem solves questions like: is the customer satisfied? Will a customer buy this product? Can a customer pay this loan?
-With our Machine Learnig Algorythm - Neuronal Network we will Identify which customers will make a specific transaction in the future, irrespective of the amount of money transacted or not.
+Process of building the Machine learning:
+![diagram.png](static/images/diagram.png)
+At the end will solved binary problem yes/no that solves questions of variables like: is the customer satisfied? Will a customer buy this product? Can a customer pay this loan? With our Machine Learnig Algorythm - Neuronal Network we will Identify which customers will make a specific transaction in the future, irrespective of the amount of money transacted or not.
 
 ## Model
 We chose to run a neuronal network with the following structure:
@@ -27,28 +28,27 @@ Model: "sequential"
 Tuning:
 ![heatmap.png](static/images/heatmap.png)
 
-![diagram.png](static/images/diagram.png)
-
 ## Data preprocessing
 1. Variables does show very low correlation among them, meaning that variables are independent. Variables while plotting them in box plots show outliers that mainly are coming from target "1" data. The following table show the variables with the highest correlation:
 <br>
 
 :-----:|:-----:
 **Variable**|**Correlation**
-var_81   |   0.080917
-var_139  |   0.074080
-var_12   |   0.069489
-var_6    |   0.066731
-var_110  |   0.064275
+var_81 | 0.080917
+var_139 | 0.074080
+var_12 | 0.069489
+var_6 | 0.066731
+var_110 | 0.064275
 
 <br>
 
 3. Variables were passed through a Standard Scaler before fitting them into the model.
 
+![scaler.png](static/images/scaler.png)
+
+4. Tune and balance the dataset.
+
 ![correlation.png](static/images/correlation.png)
-
-5. Tune and balance the dataset.
-
 
 ## Dataset testing results
 - **Dataset**
@@ -66,9 +66,9 @@ var_110  |   0.064275
 - We decided to down sampling target "0" data to better train our model, leaving the dataset as follow: 33.33% for target "0" and 66.66% for target "1".
 
 ## Conclusions
-- Accuracy Results
- - Train Data = 0.99
- - Test Data = 0.73
+- Accuracy Results:
+    - Train Data = 0.99
+    - Test Data = 0.73
 - Per the results of the correlation analysis, we can conclude that variables show very poor correlation, meaning that the variables are indepent to each other. Therefore, we should not ignore direclty any variable or drop it in feature selection preocess.
 
 _______________________________________________
